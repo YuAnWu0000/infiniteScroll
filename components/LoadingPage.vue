@@ -5,7 +5,8 @@
 .loading {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   font-size: 3.2rem;

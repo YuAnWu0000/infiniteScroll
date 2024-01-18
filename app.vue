@@ -19,7 +19,6 @@ html {
 }
 .app {
   width: 100%;
-  max-width: 144rem;
   padding: 0;
   display: flex;
   justify-content: center;
