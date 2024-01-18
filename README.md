@@ -1,6 +1,6 @@
 # Infinite Scroll Demo
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![Demo video](https://img.youtube.com/vi/95wH6zK9CQ0/0.jpg)](https://www.youtube.com/watch?v=95wH6zK9CQ0)
 
 ## Setup
 
