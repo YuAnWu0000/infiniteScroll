@@ -16,17 +16,26 @@
 <script setup>
 import { onMounted } from 'vue'
 import { getFollowersByUserName } from '../githubApi/users.client'
+import { useCommonStore } from '../stores/common'
+
+const commonStore = useCommonStore()
 
 let nowPage = 1
 const followers = ref([])
 const getFollowers = async () => {
-  const isFirstLoad = nowPage === 1
-  const { data } = await getFollowersByUserName('yyx990803', {
-    per_page: isFirstLoad ? 8 : 4, // default: 30
-    page: nowPage // default: 1
-  })
-  followers.value = followers.value.concat(data)
-  nowPage += isFirstLoad ? 2 : 1
+  commonStore.setLoadingStatus(true)
+  try {
+    const isFirstLoad = nowPage === 1
+    const { data } = await getFollowersByUserName('yyx990803', {
+      per_page: isFirstLoad ? 8 : 4, // default: 30
+      page: nowPage // default: 1
+    })
+    followers.value = followers.value.concat(data)
+    nowPage += isFirstLoad ? 2 : 1
+  } catch (err) {
+    // console.log(err)
+  }
+  commonStore.setLoadingStatus(false)
 }
 
 const bottomEl = ref(null)

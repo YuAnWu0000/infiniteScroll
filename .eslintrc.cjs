@@ -14,6 +14,7 @@ module.exports = {
     'no-undef': 'off',
     'prettier/prettier': 'error',
     'linebreak-style': 2,
+    'import/prefer-default-export': 0,
     'vue/multi-word-component-names': [
       'error',
       {

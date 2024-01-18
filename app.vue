@@ -1,9 +1,15 @@
 <template>
   <div class="app">
-    <!-- <NuxtWelcome /> -->
     <NuxtPage />
+    <LoadingPage v-if="isLoading" />
   </div>
 </template>
+<script setup>
+import { useCommonStore } from './stores/common'
+
+const commonStore = useCommonStore()
+const { isLoading } = storeToRefs(commonStore)
+</script>
 <style>
 * {
   box-sizing: border-box;
